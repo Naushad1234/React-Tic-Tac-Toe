@@ -1,0 +1,64 @@
+//You dont have to give path to the images present inside the public folder as the files will be served to the webiste visitors along side the index.html/........
+//Compoenents works in seperate isolations...../////
+
+/****** Important Concepts ********/
+
+if your new state depends on your new state pass a function to your state updating function
+The function will automatically be called by React and will recieve the guranteed latest state value.....
+
+Does not update the state without function....
+defaultValue props........
+//Two way binding.......
+using the onChange prop
+
+//Updating Object State Immutabily........
+//Lifting State Up  (Core Concept......)
+
+Lift the State up to the closest ancestor component that has access to all componnets that need to work with the state........
+
+// const initialGameBoard = [
+//   [null, null, null],
+//   [null, null, null],
+//   [null, null, null],
+// ];
+
+// export default function GameBoard({ onSelectSquare, turns }) {
+//   let gameBoard = initialGameBoard;
+
+//   for (const turn of turns) {
+//     const { square, player } = turn;
+//     const [row, col] = square;
+
+//     gameBoard[row][col] = player;
+//   }
+
+  // const [gameBoard, setGameBoard] = useState(initialGameBoard);
+
+  // function handleSelectSquare(rowIndex, colIndex) {
+  //   setGameBoard((prevGameBoard) => {
+  //     const updatedBoard = [
+  //       ...prevGameBoard.map((innerArray) => [...innerArray]),
+  //     ];
+  //     updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
+  //     return updatedBoard;
+  //   });
+
+  //   onSelectSquare();
+  // }
+
+//   return (
+//     <ol id="game-board">
+//       {gameBoard.map((row, rowIndex) => (
+//         <li key={rowIndex}>
+//           <ol>
+//             {row.map((playerSymbol, colIndex) => (
+//               <li key={colIndex}>
+//                 <button onClick={() => onSelectSquare(rowIndex, colIndex)}>{playerSymbol}</button>
+//               </li>
+//             ))}
+//           </ol>
+//         </li>
+//       ))}
+//     </ol>
+//   );
+// }s
